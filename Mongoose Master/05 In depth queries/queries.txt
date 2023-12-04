@@ -1,0 +1,42 @@
+ 
+ // implicit and operator
+
+ db.practice_q.find({
+     gender: "Female",
+          age: { $in: [18, 24, 26, 32, 30] }, 
+          interests: { $in: ["Cooking"] }
+      }, { age: 1, gender: 1, interests: 1 }).sort({ age: 1 })
+
+
+// explicit and operator 
+
+// { $and: [ { <expression1> }, { <expression2> } , ... , { <expressionN> } ] }
+db.practice_q.find({ $and: [
+    { age: { $gt: 15 } }, 
+    { age: { $lt: 36 } },
+    {gender:"Female"}
+    ] }).project({age:1}).sort({ age: 1 })
+
+// or operator
+
+// implicit or 
+
+db.practice_q.find({
+    "skills.name":{$in:["JAVASCRIPT","PYTHON"]}})
+    .project({skills:1}).sort({ age: 1 })
+
+// explicit or operator 
+
+db.practice_q.find({
+    $or:[
+        {interests:"Cooking"},
+        {interests:"Travellig"}
+        ]
+}).project({interests:1}).sort({ age: 1 })
+
+db.practice_q.find({
+    $or:[
+        {"skills.name":"JAVASCRIPT"},
+        {"skills.name":"PYTHON"}
+        ]
+}).project({skills:1}).sort({ age: 1 })
