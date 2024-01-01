@@ -4,25 +4,13 @@
 
 ## #Basic_setup
 
-1.  initialize `package.json` file
+1.  Initialize `package.json` file
 
 ```
 	npm init -y
 ```
 
-2.  install `Express, Mongoose, Cors, Dotenv`
-
-```
-	yarn add express mongoose cors dotenv
-```
-
-3.  install `TypeScript as Dependency `
-
-```
-	yarn add -D typescript ts-node-dev @typescript/express @typescript/cors
-```
-
-4.  Initialize `TypeScript` & configure file
+2.  Initialize `TypeScript` & configure file
 
 ```
 	tsc -init
@@ -30,6 +18,34 @@
 
       rootDir - src
       outDir - dist
+
+3.  install `Express, Mongoose, Cors, Dotenv`
+
+```
+	yarn add express mongoose cors dotenv bcrypt
+```
+
+4.  install `TypeScript as Dependency `
+
+```
+	yarn add -D typescript
+```
+
+```
+	yarn add -D ts-node-dev
+```
+
+```
+	yarn add -D @types/express
+```
+
+```
+	yarn add -D @types/cors
+```
+
+```
+	yarn add -D @types/bcrypt
+```
 
 5. write script in `package.json`
 
@@ -39,7 +55,7 @@
 	"build": "tsc",
 ```
 
-6. create `server.ts`  file into #src folder (`src/server.ts`) #server_ts
+6. create src folder in root directory of the project. then create `server.ts`  file into #src folder (`src/server.ts`) #server_ts
 
 ```
 	import mongoose from "mongoose";
@@ -73,20 +89,18 @@
 
 	const app: Application = express();
 
-	//parsers
+	// parsers
 	app.use(express.json());
 	app.use(cors());
 
 	// application routes
 	app.use('/api/v1', router);
 
-	const test = (req: Request, res: Response) => {
-	  const a = 10;
-	  res.send(a);
-	};
-	app.get('/', test);
+	app.get('/', (req: Request, res: Response) => {
+	  res.send("Server is Running");
+	});
 
-	app.use(globalErrorHandler); #globallErrorHandler
+	app.use(globalErrorHandler);
 	app.use(notFound);
 
 	export default app;
@@ -95,46 +109,45 @@
 8.  create `index.ts` file into #config folder #config_index_ts
 
 ```
-	import dotenv from "dotenv";
-	import path from "path";
+import dotenv from "dotenv";
+import path from "path";
 
-	dotenv.config({
-	  path: path.join(process.cwd(), ".env"),
-	});
+dotenv.config({
+	path: path.join(process.cwd(), ".env"),
+});
 
-	export default {
-	  NODE_ENV: process.env.NODE_ENV,
-	  port: process.env.PORT,
-	  database_url: process.env.DATABASE_URL,
-	  database_url_local: process.env.DATABASE_URL_LOCAL,
-	  bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
-	  default_password: process.env.DEFAULT_PASS,
-	};
+export default {
+	NODE_ENV: process.env.NODE_ENV,
+	port: process.env.PORT,
+	database_url: process.env.DATABASE_URL,
+	database_url_local: process.env.DATABASE_URL_LOCAL,
+	bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
+	default_password: process.env.DEFAULT_PASS,
+};
 ```
 
 9. create `.env` file in projects root directory #\_env
 
 ```
-  NODE_ENV = development
+NODE_ENV = development
  
-  PORT= 5000
+PORT= 5000
  
-  DATABASE_URL_LOCAL= "mongodb://localhost:27017"
+DATABASE_URL_LOCAL= "mongodb://localhost:27017"
  
-  DATABASE_URL= "mongodb+srv://<user>:<password>@cluster0.oo5opfq.mongodb.net/<
-  databaseName>?retryWrites=true&w=majority"
+DATABASE_URL= "mongodb+srv://<user>:<password>@cluster0.oo5opfq.mongodb.net/<databaseName>?retryWrites=true&w=majority"
  
-  BCRYPT_SALT_ROUNDS= 10
+BCRYPT_SALT_ROUNDS= 10
 
-  DEFAULT_PASSWORD = "Rashed@123"
+DEFAULT_PASSWORD = "Rashed@123"
 ```
 
 10. create `.gitignore` file in project's root directory #\_gitignore
 
 ```
-	node_modules
-	dist
-    .env
+node_modules
+dist
+.env
 ```
 
 11. Create `index.ts` file in #routes folder into #app folder #routes_index_ts
@@ -172,13 +185,13 @@
 1. install this for `es-lint`
 
 ```
-	yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 2. then install
 
-```shell
-	npx eslint --init
+```
+npx eslint --init
 ```
 
 3. add some rules in `eslint.json`
@@ -199,15 +212,15 @@
 3. you can prevent linting by creating a `.eslintignore` file and adding the folders or files you want to ignore: this file
 
 ```
-	node_modules
-	dist
+node_modules
+dist
 ```
 
 4. then add some script to `package.json`
 
 ```json
 	"lint": "eslint src --ignore-path .eslintignore --ext .ts",
-	"lint-fix":"npx eslint src --fix"
+	"lint-fix":"npx eslint src --fix",
 ```
 
 then check the script `yarn lint` & `yarn lint-fix`
@@ -217,7 +230,7 @@ then check the script `yarn lint` & `yarn lint-fix`
 1. install prettier
 
 ```shell
-	yarn add -D prettier
+yarn add -D prettier
 ```
 
 2. create a file called `.prettierrc.json` in the project’s root directory, then paste this code into it
@@ -230,8 +243,8 @@ then check the script `yarn lint` & `yarn lint-fix`
 3. add some script to `package.json`
 
 ```json
-	"prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
-	"prettier-fix": "npx prettier --write src",
+"prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+"prettier-fix": "npx prettier --write src",
 ```
 
 - then check the script `yarn prettier` & `yarn prettier-fix`
@@ -248,18 +261,18 @@ then check the script `yarn lint` & `yarn lint-fix`
 5. The best solution here is to use the es-lint-config-prettier plugin to disable all ES-Lint rules that are irrelevant to code formatting, as Prettier is already good at it: install
 
 ```shell
-	yarn add -D eslint-config-prettier
+yarn add -D eslint-config-prettier
 ```
 
 6. With that installed, let’s go to the `.eslintrc` file, and add prettier at the end of your extends list to disable any other previous rules from other plugins:
 
 ```json
-	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
 ```
 
 - add this to `tsconfig.json`
 
 ```
-	include": ["src"], // which files to compile
-	"exclude": ["node_modules"], // which files to skip
+"include": ["src"], // which files to compile
+"exclude": ["node_modules"], // which files to skip
 ```

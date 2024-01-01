@@ -1,0 +1,42 @@
+## #MVC
+
+- #src
+  - #app
+    - #config
+      - #config_index_ts
+    - #errors
+      - #AppError
+      - #handleZodError
+      - #handleCastError
+      - #handleDuplicateError
+      - #handleValidationError
+    - #interface
+    - #middlewares
+      - #globallErrorHandler
+      - #notFound
+      - #validateRequest
+    - #modules
+      - #students
+        - #student_interface_ts
+        - #student_model_ts
+        - #student_validation_ts
+        - #student_service_ts
+        - #student_controller_ts
+        - #student_route_ts
+      - #users
+        - #user_interface_ts
+        - #user_model_ts
+        - #user_validation_ts
+        - #user_service_ts
+        - #user_controller_ts
+        - #user_route_ts
+        - #user_utils_ts
+    - #routes
+      - #routes_index_ts
+    - #utils
+      - #catchAsync_ts
+      - #sendResponse_ts
+  - #app_ts
+  - #server_ts
+- #\_env
+- #\_gitignore
