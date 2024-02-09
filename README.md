@@ -45,7 +45,7 @@ Feel free to explore the different branches to find information on specific topi
 
 ## How to Navigate
 
-Each major topic has its own branch in the repository. For example, the `git-and-github` contains information related to Git and GitHub, while the `react-basics` covers foundational concepts in React.
+Each major topic has its own folder in the repository. For example, the `Git_&_Github` contains information related to Git and GitHub.
 
 To explore a specific topic, go to the corresponding folder and check the documentation and code samples available.
 
