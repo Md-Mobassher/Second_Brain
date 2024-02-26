@@ -2,7 +2,7 @@
 
 ## Git and GitHub Handnote
 
-Welcome to the [Project Name] repository! This handnote provides a brief overview of using Git and GitHub for version control and collaboration.
+Welcome to Git and GitHub Handnote! This handnote provides a brief overview of using Git and GitHub for version control and collaboration.
 
 ### Command Line Usage
 
