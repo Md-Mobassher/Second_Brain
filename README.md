@@ -43,6 +43,13 @@ Feel free to explore the different branches to find information on specific topi
 - Working with Mongoose for MongoDB integration.
 - CRUD operations with MongoDB.
 
+### Database Handnote: PostgreSQL
+
+- Introduction to PostgreSQL and its core features.
+- Setting up PostgreSQL databases.
+- Basic and advanced SQL queries for data manipulation and retrieval.
+- Integrating PostgreSQL with web applications.
+
 ## How to Navigate
 
 Each major topic has its own folder in the repository. For example, the `Git_&_Github` contains information related to Git and GitHub.
