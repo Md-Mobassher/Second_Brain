@@ -2,7 +2,7 @@
 
 ## Basic Commands
 
-- I`nstall prisma globally` to your machine
+- Install prisma globally to your machine
 
 ```
 npm install prisma -g
