@@ -2,7 +2,7 @@
 
 ## Git and GitHub Handnote
 
-Welcome to Git and GitHub Handnote! This handnote provides a brief overview of using Git and GitHub for version control and collaboration.
+Welcome to the Git and GitHub Handnote! This handnote provides a brief overview of using Git and GitHub for version control and collaboration.
 
 ### Command Line Usage
 
@@ -118,6 +118,12 @@ git branch -d [branch_name]
 
 ```
 git push origin --delete [branch_name]
+```
+
+- Push a branch
+
+```
+git push -u origin [branch name]
 ```
 
 ### Additional Git Commands:
