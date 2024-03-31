@@ -42,3 +42,18 @@ vercel
 ```
 vercel --prod
 ```
+
+---
+
+# Prisma project deploy
+
+- Add this `Script` into `package.json` file
+
+```
+ "scripts": {
+    "prod": "node ./dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "postinstall": "prisma generate"
+  },
+```
