@@ -1,9 +1,41 @@
 # LeetCode Problem solving
 
-[For JavaScript Theoretical questions](https://github.com/sudheerj/javascript-interview-questions)
-[For Reactjs theory questions](https://github.com/sudheerj/reactjs-interview-questions/tree/master/.github/workflows)
-[For Google, Facebook, and Microsoft coding challenges](https://youtube.com/c/KevinNaughtonJr)
-[Jest](https://github.com/sapegin/jest-cheat-sheet)
+### Important Links
+
+- [For JavaScript Theoretical questions](https://github.com/sudheerj/javascript-interview-questions)
+- [For Reactjs theory questions](https://github.com/sudheerj/reactjs-interview-questions/tree/master/.github/workflows)
+- [For Google, Facebook, and Microsoft coding challenges](https://youtube.com/c/KevinNaughtonJr)
+- [Jest](https://github.com/sapegin/jest-cheat-sheet)
+
+### Table of Contents
+
+- [Problem Solving](#problem_solving)
+- [Advanced Interview Concepts](#advancedinterviewconcepts)
+- [Closures](#closures)
+- [Prototype](#prototype)
+- [CSS Positions](#csspositions)
+- [Time Based Event](#Time_based_Event)
+- [Set Timeout](#settimeout)
+- [Set Interval](#setinterval)
+- [Clear Timeout](#cleartimeout)
+- [Clear Interval](#clearinterval)
+- [Debouncing and Throttling in JavaScript](#debouncing_&_throttling_in_javascript)
+- [CALL](#call)
+- [APPLY](#apply)
+- [Bind](#bind)
+- [Hoisting](#hoisting)
+- [Window](#window)
+- [This](#this)
+- [Event Bubbling](#event_bubbling)
+- [Event Capturing](#event_capturing)
+- [Event Delegation](#event_delegation)
+- [Bind](#bind)
+- [Promises](#promises)
+- [JWT Token](#JWT_Token)
+
+---
+
+## Problem_solving
 
 - Code 1: Remove Duplicate characters from String
 
@@ -923,6 +955,7 @@ arr.splice(i, 1);
             i--;
           }
         } // [1, 2, 3, 4, 6, 7, 8, 9, 0]
+
 
 Way 5: Using the Array filter Method to Remove Items By Value
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -1969,6 +2002,646 @@ console.log(updatedArr)//{0: 'John', 1: 'Peter', 2: 'Sally', 3: 'Jane'}
 
 ---
 
+- running encoding algorithm: important
+
+```
+function run(strr){
+  let n = strr.length;
+  let result = [];
+
+  for(let i=0;i<n;i++){
+
+    let count = 1;
+    while( i < n-1 && strr[i]==strr[i+1]){
+      count ++;
+      i++;
+    }
+
+    result.push(strr[i]);
+    result.push(count);
+  }
+  return result;
+
+}
+var strr = "saattthhhhhiiiiissssss";
+console.log(...run(strr));
+```
+
+---
+
+- fizzbuzz:
+
+```
+function init(n) {
+  for(var i=0;i<=n;i++){
+    if(i%3===0 && i%5===0){
+      console.log("fizzbuzz")
+    }
+    else if(i%3===0){
+      console.log("fizz")
+    }
+    else if(i%5===0){
+       console.log("buzz")
+    }
+
+    else{
+      console.log(i);
+    }
+  }
+}
+
+init(15)
+```
+
+---
+
+- print every nth character
+
+```
+function everyCharacter(str, n){
+  for(let i = n -1; i < str.length; i =i +n){
+   console.log(str[i],i);
+  }
+
+}
+everyCharacter("AccubitsTechnologies",3);
+```
+
+---
+
+- check array is sorted?
+  // [1,4,6,8,10] = true;
+  // [1,5,7,4,6,8,10] = false
+
+```
+ function arraySorted(arr){
+  for(let i=0; i<arr.length;i++){
+    if( arr[i] > arr[i+1]){
+      console.log("not sorted")
+      return false;
+    }
+  }
+      console.log("Array sorted")
+    return true ;
+}
+console.log(arraySorted([1,2,3,4,5,9,10]));
+```
+
+```
+function deSorted(arr){
+  for(let i=0; i<arr.length;i++){
+    if(  arr[i] < arr[i+1] ){
+      console.log("array not unscending order")
+      return false;
+    }
+  }
+      console.log("Array order")
+    return true ;
+}
+console.log(deSorted([10,2,9,8,7,6,5]));
+```
+
+---
+
+- Find the largest and smallest element of the array
+  //input [2,5,1,8,11,7,6],output: [1,11]
+  //let arrayed=[2,5,1,8,11,7,6];
+  //console.log(Math.min(arrayed));
+
+```
+function findmaxin(n){
+  if(n.length === 0) return [];
+  let min = n[0];
+  let max = n[0];
+  for(let i=1; i <n.length; i++){
+    if(n[i] < min){
+      min = n[i];
+    }
+     if(n[i] > max){
+      max = n[i];
+    }
+  }
+console.log([min,max]);
+}
+findmaxin([2,5,1,8,11,7,6]);
+```
+
+---
+
+- Return the sum of all elements in the Array
+  // input: [1,2,3,4,5]
+  // output:15
+
+```
+// let a = [1,2,3,4,5]
+// let b = a.reduce((a,c)=>{
+//   return a+c;
+// },0);
+// console.log(b);
+
+function sumTotal(arr){
+  let total = 0;
+  for(let i=0; i<arr.length;i++){
+    //console.log(i);
+    total += arr[i];
+  }
+ console.log(total);
+}
+sumTotal([1,2,3,4,5]);
+```
+
+---
+
+- write a function to return the running sum of the elements in teh Array
+  // input: [1,2,3,4,5];
+  // output: [1,3,6,10,15];
+
+```
+function runningSum(aarr){
+   console.log("input: "+ aarr);
+  let total = 0;
+  for(let i=0;i<aarr.length;i++){
+    total += aarr[i];
+  aarr[i] = total;
+
+  }
+  console.log("Output: "+aarr);
+
+}
+runningSum([1,2,3,4,5]);
+```
+
+---
+
+- swapping two variables
+
+```
+let a = 10;
+let b = 20;
+//[a,b] = [b,a];
+
+let temp = a;
+a = b;
+b = temp;
+console.log(a);
+console.log(b);
+```
+
+---
+
+- Shuffle the Array
+  // input: nums=[2,5,1,3,4,7], n =3,
+  // output: [2,3,5,4,1,7]
+
+```
+var shuffle = function(nums,n){
+  let arr=[];
+   for(let i = 0;i < n; i++){
+     arr.push(nums[i]);
+     arr.push(nums[i+n]);
+   }
+   return arr;
+}
+console.log(shuffle([1,2,3,4,11,22,33,44],4));
+```
+
+---
+
+- is palindrome number
+
+```
+var isPalindrome = function(head){
+  let arr = [];
+  while(head){
+    arr.push(head.val)
+    head = head.next;
+  }
+  return (arr.join('') === arr.reverse().join(''))
+}
+console.log(isPalindrome([1,4]));
+```
+
+---
+
+- shuffle a string
+  //input: s="codeleet",indices=[4,5,6,7,0,2,1,3]
+  //output: "leetcode"
+
+```
+var restoreString = function (s, indices) {
+   let result_array = [];
+   let result_str = "";
+
+   for (let i = 0; i < s.length; i++) {
+    result_array[indices[i]] = s[i];//4->c
+   }
+   //console.log(result_array)
+
+   for (let i = 0; i < result_array.length; i++) {
+    result_str += result_array[i];
+   }
+
+   return result_str;
+};
+console.log(restoreString("codeleet",[4,5,6,7,0,2,1,3]));;
+```
+
+---
+
+- How many numbers are smaller //1365 than the current numbers
+  // input: nums = [8,1,2,2,3];
+  // output: [4,0,1,1,3];
+  //brute force methods using 2 forloop-big n2
+  //using sorting we can figure out this
+
+```
+function smaller(nums){
+  console.log(nums);
+  let sortedNums = [...nums].sort((a,b)=> a-b);
+let obj ={};
+console.log(sortedNums );
+sortedNums.forEach((num,i)=>{
+  if(obj[num] == undefined) {
+    obj[num]=i;
+  }
+});
+return nums.map(num => obj[num]);
+
+};
+console.log(smaller([8,1,2,2,3]));
+```
+
+---
+
+- Number of Steps to Reduce a Number to zero
+
+```
+var number = function(num){
+  let steps=0;
+  while(num !=0){
+    if(num %2 ==0){
+      num = num /2;
+    }
+    else{
+      num = num -1;
+    }
+    steps++;
+    console.log(steps);
+  }
+  return steps;
+};
+console.log(number(8))
+```
+
+---
+
+- given an array nums.
+
+```
+//Running Sum of 1d Array
+// input: nums = [1,2,3,4];
+// output: [1,3,6,10];-> 1,1+2,1+2+3,1+2+3+4
+var runningSum = function(nums){
+  let sum =0;
+  for(let i = 0; i < nums.length;  i++){
+    sum = sum + nums[i];
+    nums[i]=sum;
+  }
+  return nums;
+};
+let create = runningSum([1,2,3,4]);
+console.log(create);
+```
+
+---
+
+- String matching array-1408
+  //input words=["mass","as","hero","superhero"]
+  //output: ["as","hero"]
+  //must compare lower length to higher as to mass
+
+```
+var stringMatching = function(words){
+  words = words.sort((a,b)=>a.length - b.length);
+  console.log("input: "+ words);
+  let result =[];
+
+  for(let i=0;i<words.length;i++){
+    let wordIndex = words[i];
+
+    for(let j=i+1;j<words.length;j++){
+      if(words[j].indexOf(wordIndex)>-1){
+        result.push(wordIndex);
+        break;
+      }
+    }
+  }
+  return result;
+}
+
+console.log("output: "+ stringMatching(["masser","as","er","hero","superhero"]));
+```
+
+---
+
+- Valid Parentheses ()
+
+```
+//valid parentheses
+//()->true.,(])->false
+var isValid = function(s){
+  if(!s) return false;
+  let stack =[];
+  let match={
+    ')':"(",
+    ']':'[',
+    '}':'{'
+
+  };
+  for(let i=0; i < s.length;i++){
+    let matchChar =match[s[i]];
+    if(matchChar){
+      let last = stack[stack.length -1];
+      if(last == matchChar){
+        stack.pop();
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      stack.push(s[i]);
+    }
+  }
+  return (stack.length == 0) ? true :false;
+};
+
+console.log(isValid("[{[]}]"));****
+```
+
+---
+
+- reverse integer
+  //input -> 123,-123->321,-321
+
+```
+//method 1 : Stirng
+
+var reverseOne = function(x){
+  let negative =(x < 0) ? -1 : 1;//-1
+
+  x=Math.abs(x);
+  console.log(x);
+  ans = (x+"").split('').reverse().join('');
+  console.log(ans);
+
+  return ans * negative;
+}
+console.log(reverseOne(-123));
+console.log("------------");
+```
+
+```
+//method 2: mathematucal method
+var reverse = function(x){
+  let negative =(x < 0) ? -1 : 1;
+  x=Math.abs(x);
+  let res = 0;
+  while(x > 0){
+    res = (res *10)+(x % 10); //3
+    x = Math.floor(x/10)//12
+  }
+
+ if(res < -2147483648 || res > 2147483647){
+   return 0;
+ }
+  return res * negative;
+}
+console.log(reverse(-123));
+```
+
+---
+
+- Intersection of two arrays
+  //input: [4,9,5],[9,4,9,8,4]
+  //output:[ 9, 4 ]
+
+```
+var intersection = function(num1,num2){
+  let obj ={};
+  let result = new Set();
+  num1.forEach(num => obj[num]=true);
+  num2.forEach(num =>{
+    if(obj[num]){
+      result.add(num);
+    }
+  });
+  return [...result];
+
+}
+console.log(intersection([4,9,5],[9,4,9,8,4]))
+```
+
+---
+
+- Occurrrences after biagram
+  // Input: text="alice is a good girl she is a good student",
+  // first="a",second="good"-->output: ["girl", "student"]
+
+```
+ var findOccurences = function(text,first,second){
+   let res= [];
+   let words = text.split(" ");
+   for(let i=0;i < words.length -2;i++){
+     let firstWord = words[i];
+     let secondWord = words[i+1];
+     if(firstWord == first && secondWord==second){
+       res.push(words[i+2])
+     }
+   }
+   return res;
+ }
+ console.log(findOccurences("alice is a good girl she is a good student","a","good"))
+```
+
+---
+
+- Two sum Brute force method
+  //input nums=[3,2,4],target=6-->output: [1,2]
+
+```
+var twoSum = function (nums,n){
+
+  for(let i=0;i<nums.length;i++){
+    for(let j =i+1;j<nums.length;j++){
+      if((nums[i]+nums[j])==n){
+    console.log([i,j]);
+      }
+    }
+  }
+
+};
+twoSum([2,3,4,5,6],9);
+console.log("=================================");
+//hash table
+var twoSumo = function(num,target){
+  const obj ={
+    //num [i]
+  };
+  for(let i =0;i<num.length;i++){
+    if(obj[num[i]] !== undefined){
+      //console.log(obj[num[i]]);
+      console.log([obj[num[i]],i]);
+
+    }
+    else{
+      obj[target -num[i]] =i;
+    }
+  }
+}
+twoSumo([2,3,4,5,6],9);
+```
+
+---
+
+```
+const twoSum = function(nums, target) {
+    const comp = {};
+    for(let i=0; i<nums.length; i++){
+        if(comp[nums[i] ]>=0){
+            return [ comp[nums[i] ] , i]
+        }
+        comp[target-nums[i]] = i
+    }
+};
+console.log(twoSum([2,3,4,5,6],9));
+```
+
+---
+
+// O(n) - One-pass Hash Table
+
+```
+var twoSam = function(nums, target) {
+    let map = new Map;
+    for (var i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+        if (map.has(complement)) {
+            return [map.get(complement), i]
+        }
+        map.set(nums[i], i);
+    }
+}
+console.log(twoSam([2,3,4,5,6],9))
+```
+
+---
+
+//Remove Duplicates from string
+//console.log("Hello, World!");
+
+```
+let a = "i am sathiskumar"
+function removeDub(a) {
+var unik = '';
+
+for(let chr of a){
+  if(unik.includes(chr) == false){
+    unik += chr;
+  }
+}
+return unik;
+}
+console.log(removeDub(a));
+```
+
+---
+
+- Object flat:
+
+```
+var person = {
+      "name":"Ram",
+      "age":27,
+      "vehicles": {
+         "car":"limousine",
+         "bike":"ktm-duke",
+         "plane":"lufthansa"
+      }
+   }
+function flat(person){
+  let result ={};
+  for(let i in person){
+    if((typeof person[i] === 'object' &&
+!Array.isArray(person[i]))){
+      let temp = flat(person[i]);
+
+      for(let j in temp){
+        result[i+ "."+j] = temp[j]
+      }
+    }
+    else{
+      result[i] = person[i];
+    }
+  }
+  return result;
+}
+console.log(flat(person));
+```
+
+---
+
+- How to check the anagram code
+
+```
+function checkStringsAnagram(a, b) {
+   let len1 = a.length;
+   let len2 = b.length;
+   if(len1 !== len2){
+      console.log('Invalid Input');
+      return
+   }
+   let str1 = a.split('').sort().join('');
+   let str2 = b.split('').sort().join('');
+   if(str1 === str2){
+      console.log("True");
+   } else {
+      console.log("False");
+   }
+}
+checkStringsAnagram("Night","thing")
+```
+
+---
+
+- remove duplicates string
+  `//method 1`: var x = "i am Mobassher"
+
+```
+const result = Array.from(new Set(x)).join('')
+
+console.log(result);
+```
+
+`//method 2:`
+
+```
+let str = "i am Mobassher";
+function remove(str){
+  var uniq = '';
+  for(let chr of str){
+    if(uniq.includes(chr)==false){
+      uniq+=chr;
+    }
+  }
+  return uniq;
+
+}
+console.log(remove(str))
+```
+
+---
+
 ### 3 main use-cases of #map( ) function:-
 
 1. Used for rendering a list of data to the Dom in React
@@ -2051,9 +2724,9 @@ for(var i=0; i<arr.length; i++){
 
 ---
 
-## Advance Interview Concepts
+## Advanced Interview Concepts
 
-### 1. Closures-
+## Closures
 
 A closure is the combination of a function and the lexical environment within which that function was declared.
 
@@ -2063,7 +2736,7 @@ When inner function can have access to the outer function variables and paramete
 
 The return statement does not execute the inner function - function is only executed only when followed by ()parathesis, but rather than returns the entire body of the function.
 
-### Uses/advantages of closures:
+### Advantages of closures:
 
 - event handlers
 - callback functions
@@ -2136,7 +2809,8 @@ inner() //15
 1. `Object.prototype`- It is a prototype OBJECT of object(cunstruction function where it will inherit all properties of Object.protorype). Prototype Object of `Object.prototype is NULL.`
 2. `Array.prototype`-Prototype Object of Array.prototype is Object.prototype and Prototype Object of Object.prototype is NULL.
 3. `Function.prototype`
-   Example-
+
+`Example`-
 
 ```
 var person = function(name){
@@ -2150,7 +2824,7 @@ console.log(priya.age) //21
 
 ```
 
-### Purpose/Use of prototype:
+### Use of prototype:
 
 1. to find properties and methods of an object
 2. to implement inheritance in JavaScript
@@ -2206,7 +2880,7 @@ console.log(person1.age); // 23
 
 ---
 
-### Time based Event:
+### Time_based_Event
 
 #### SetTimeout:
 
@@ -2251,7 +2925,7 @@ setInterval(sayHi, 1000, "Hello", "John");
 
 ---
 
-### Debouncing and Throttling in JavaScript:
+## Debouncing\_&_Throttling_in_JavaScript
 
 1. Create impact on performance of your website, but also prevent unnecessary API calls and load on the server.
 2. Debouncing and throttling techniques are used to limit the number of times a function can execute. ke button click, mouse move, search bar, window scrolling
@@ -2419,7 +3093,7 @@ console.log(this.a); //10
 
 Bydefault event capturing happen first and then even bubbling happen.
 
-### Event Bubbling:
+### Event_Bubbling:
 
 1. When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. With bubbling, the event is
    first captured and handled by the innermost element and then propagated to outer elements.
@@ -2467,7 +3141,7 @@ div{
 
 `js-`
 
-### for bubbling:
+### for_bubbling:
 
 ```
 document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")}, false);
@@ -2499,7 +3173,7 @@ or
 document.querySelector("#child").addEventListener("click",()=> {console.log("child clicked")})
 ```
 
-### for capturing:
+### for_capturing:
 
 ```
 document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")}, true);
@@ -2509,7 +3183,7 @@ document.querySelector("#parent").addEventListener("click",()=> {console.log("pa
 document.querySelector("#child").addEventListener("click",()=> {console.log("child clicked")},true);
 ```
 
-### stopPropogation:
+### Stop_Propogation:
 
 ```
 document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")}, false);
@@ -2521,7 +3195,7 @@ document.querySelector("#child").addEventListener("click",()=> {console.log("chi
 
 ---
 
-### Event Delegation:
+### Event_Delegation:
 
 1. Event delegation makes use of one of the Event Propagation techniques called Event Bubbling
 2. if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
@@ -2591,7 +3265,7 @@ printNameFinal("MadyaPradesh")
 
 ---
 
-## Promises:-
+## Promises
 
 #### 👉Why do you need a promise?
 
@@ -2709,7 +3383,7 @@ append(2)  // [2], not [1, 2]
 
 ---
 
-## JWT Token:
+## JWT_Token
 
 1. `JSON Web Token (JWT)` is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
 2. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a public/private key pair using RSA.
