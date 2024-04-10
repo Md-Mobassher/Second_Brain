@@ -1,25 +1,6 @@
 # JavaScript Interview Questions & Answers
 
-> Click :star:if you like the project and follow [@SudheerJonna](https://twitter.com/SudheerJonna) for more updates. Coding questions available [here](#coding-exercise). PDF and Epub versions available at [actions tab](https://github.com/sudheerj/JavaScript-Interview-Questions/actions).
-
 ---
-
-<p align="center">
-  <a href=https://zerotomastery.io/?utm_source=github&utm_medium=sponsor&utm_campaign=javascript-interview-questions>
-    <img src=https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:70/https://www.filepicker.io/api/file/AKYtjj5SSGyJuyZrkAB2 alt="ZTM Logo" width="100" height="50">
-  </a>
-  <p align="center">
-    <ol>
-    <li>Take this <a href=https://links.zerotomastery.io/jsp_sudheer>JavaScript Projects</a> course to go from a JS beginner to confidently building your own projects</li>
-    <li>Take this <a href=https://links.zerotomastery.io/mci_sudheer2>coding interview bootcamp</a> if you’re serious about getting hired and don’t have a CS degree</li>
-    <li>Take this <a href=https://links.zerotomastery.io/ajs_sudheer>Advanced JavaScript Course</a> to learn advanced JS concepts and become a top JS developer</li>
-    </ol>
-  </p>
-</p>
-
----
-
-**Note:** Please check [DataStructures and Algorithms](https://github.com/sudheerj/datastructures-algorithms) for DSA related questions or problems.
 
 ### Table of Contents
 
@@ -34,7 +15,7 @@
 | 7   | [What is the difference between slice and splice](#what-is-the-difference-between-slice-and-splice)                                                           |
 | 8   | [How do you compare an Object with a Map](#how-do-you-compare-object-and-map)                                                                                 |
 | 9   | [What is the difference between == and === operators](#what-is-the-difference-between--and--operators)                                                        |
-| 10  | [What are lambda expression or arrow functions](#what-are-lambda-or-arrow-functions)                                                                                     |
+| 10  | [What are lambda expression or arrow functions](#what-are-lambda-or-arrow-functions)                                                                          |
 | 11  | [What is a first class function](#what-is-a-first-class-function)                                                                                             |
 | 12  | [What is a first order function](#what-is-a-first-order-function)                                                                                             |
 | 13  | [What is a higher order function](#what-is-a-higher-order-function)                                                                                           |
@@ -476,17 +457,17 @@
 | 449 | [What is Function Composition?](#what-is-function-composition)                                                                                                |
 | 450 | [How to use await outside of async function prior to ES2022?](#how-to-use-await-outside-of-async-function-prior-to-es2022)                                    |
 | 451 | [What is the purpose of the this keyword in JavaScript?](#what_is_the_purpose_of_the_this_keyword_in_javascript?)                                             |
-| 452 | [What are the advantages of closures?](#what-are-the-advantages-of-closures) |
-| 453 | [What are the phases of execution context?](#what-are-the-phases-of-execution-context) |
-| 454 | [What are the possible reasons for memory leaks?](#what-are-the-possible-reasons-for-memory-leaks) |
-| 455 | [What are the optimization techniques of V8 engine?](#what-are-the-optimization-techniques-of-v8-engine) |
-| 456 | [What are the examples of built-in higher order functions??](#what-are-the-examples-of-built-in-higher-order-functions) |
-| 457 | [What are the benefits higher order functions??](#what-are-the-benefits-higher-order-functions) |
-| 458 | [How do you create polyfills for map, filter and reduce functions?](#how-do-you-create-polyfills-for-map-filter-and-reduce-functions) |
-| 459 | [What is the difference between map and forEach functions?](#what-is-the-difference-between-map-and-foreach-functions) |
-| 460 | [Give an example of statements affected by automatic semicolon insertion?](#give-an-example-of-statements-affected-by-automatic-semicolon-insertion) |
-|461| [What are the event phases on browser?](#what-are-the-event-phases-on-browser) |
-|462| [What are the real world usecases of proxy?](#what-are-the-real-world-usecases-of-proxy) |
+| 452 | [What are the advantages of closures?](#what-are-the-advantages-of-closures)                                                                                  |
+| 453 | [What are the phases of execution context?](#what-are-the-phases-of-execution-context)                                                                        |
+| 454 | [What are the possible reasons for memory leaks?](#what-are-the-possible-reasons-for-memory-leaks)                                                            |
+| 455 | [What are the optimization techniques of V8 engine?](#what-are-the-optimization-techniques-of-v8-engine)                                                      |
+| 456 | [What are the examples of built-in higher order functions??](#what-are-the-examples-of-built-in-higher-order-functions)                                       |
+| 457 | [What are the benefits higher order functions??](#what-are-the-benefits-higher-order-functions)                                                               |
+| 458 | [How do you create polyfills for map, filter and reduce functions?](#how-do-you-create-polyfills-for-map-filter-and-reduce-functions)                         |
+| 459 | [What is the difference between map and forEach functions?](#what-is-the-difference-between-map-and-foreach-functions)                                        |
+| 460 | [Give an example of statements affected by automatic semicolon insertion?](#give-an-example-of-statements-affected-by-automatic-semicolon-insertion)          |
+| 461 | [What are the event phases on browser?](#what-are-the-event-phases-on-browser)                                                                                |
+| 462 | [What are the real world usecases of proxy?](#what-are-the-real-world-usecases-of-proxy)                                                                      |
 
 1. ### What are the possible ways to create objects in JavaScript
 
@@ -498,8 +479,8 @@
 
       ```javascript
       var object = {
-           name: "Sudheer",
-           age: 34
+        name: "Sudheer",
+        age: 34,
       };
       ```
 
@@ -531,22 +512,23 @@
       ```javascript
       var object = Object.create(null);
       ```
+
       The following example creates an object along with additional new properties.
 
       ```javascript
       let vehicle = {
-        wheels: '4',
-        fuelType: 'Gasoline',
-        color: 'Green'
-      }
+        wheels: "4",
+        fuelType: "Gasoline",
+        color: "Green",
+      };
       let carProps = {
         type: {
-          value: 'Volkswagen'
+          value: "Volkswagen",
         },
         model: {
-          value: 'Golf'
-        }
-      }
+          value: "Golf",
+        },
+      };
 
       var car = Object.create(vehicle, carProps);
       console.log(car);
@@ -594,6 +576,7 @@
       // If the result is a non-null object then use it otherwise just use the new instance.
       console.log(result && typeof result === 'object' ? result : newInstance);
       ```
+
    6. **Object's assign method:**
 
       The `Object.assign` method is used to copy all the properties from one or more source objects and stores them into a target object.
@@ -601,8 +584,8 @@
       The following code creates a new staff object by copying properties of his working company and the car he owns.
 
       ```javascript
-      const orgObject = { company: 'XYZ Corp'};
-      const carObject = { name: 'Toyota'};
+      const orgObject = { company: "XYZ Corp" };
+      const carObject = { name: "Toyota" };
       const staff = Object.assign({}, orgObject, carObject);
       ```
 
@@ -761,10 +744,10 @@
 
    Some of the major differences in a tabular form:
 
-   | Slice                                        | Splice                                          |
-   | -------------------------------------------- | ----------------------------------------------- |
-   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)            |
-   | Returns the subset of original array         | Returns the deleted elements as array           |
+   | Slice                                        | Splice                                       |
+   | -------------------------------------------- | -------------------------------------------- |
+   | Doesn't modify the original array(immutable) | Modifies the original array(mutable)         |
+   | Returns the subset of original array         | Returns the deleted elements as array        |
    | Used to pick the elements from array         | Used to insert/delete elements to/from array |
 
    **[⬆ Back to Top](#table-of-contents)**
@@ -819,10 +802,11 @@
     An arrow function is a shorter/concise syntax for a function expression and does not have its own **this, arguments, super, or new.target**. These functions are best suited for non-method functions, and they cannot be used as constructors.
 
     Some of the examples of arrow functions are listed as below,
+
     ```javascript
     const arrowFunc1 = (a, b) => a + b; // Multiple parameters
-    const arrowFunc2 = a => a * 10; // Single parameter
-    const arrowFunc3 = () => {} // no parameters
+    const arrowFunc2 = (a) => a * 10; // Single parameter
+    const arrowFunc3 = () => {}; // no parameters
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
@@ -861,9 +845,10 @@
     const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
     higherOrder(firstOrderFunc);
     ```
+
     You can also call the function which you are passing to higher order function as callback function.
 
-    The higher order function is helpful to write the modular and reusable code. For example, the below example illustrate the 
+    The higher order function is helpful to write the modular and reusable code. For example, the below example illustrate the
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -947,11 +932,11 @@
 
     You can list out the differences in a tabular format
 
-    | var                                                   | let                         |
-    | ----------------------------------------------------- | --------------------------- |
-    | It has been available from the beginning of JavaScript | Introduced as part of ES6   |
-    | It has function scope                                 | It has block scope          |
-    | Variable declaration will be hoisted                             | Hoisted but not initialized |
+    | var                                                         | let                                           |
+    | ----------------------------------------------------------- | --------------------------------------------- |
+    | It has been available from the beginning of JavaScript      | Introduced as part of ES6                     |
+    | It has function scope                                       | It has block scope                            |
+    | Variable declaration will be hoisted                        | Hoisted but not initialized                   |
     | It is possible to re-declare the variable in the same scope | It is not possible to re-declare the variable |
 
     Let's take an example to see the difference,
@@ -1015,7 +1000,7 @@
 
 21. ### What is the Temporal Dead Zone
 
-    The Temporal Dead Zone(TDZ) is a specific period or area of a block where a variable is inaccessible until it has been intialized with a value. This behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a `let` or `const` variable before its declaration (within its scope) causes a ReferenceError. 
+    The Temporal Dead Zone(TDZ) is a specific period or area of a block where a variable is inaccessible until it has been intialized with a value. This behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a `let` or `const` variable before its declaration (within its scope) causes a ReferenceError.
 
     Let's see this behavior with an example,
 
@@ -1790,7 +1775,7 @@
     The delete operator is used to delete the property as well as its value.
 
     ```javascript
-    var user = { firstName: "John", lastName:"Doe", age: 20 };
+    var user = { firstName: "John", lastName: "Doe", age: 20 };
     delete user.age;
 
     console.log(user); // {firstName: "John", lastName:"Doe"}
@@ -2785,8 +2770,7 @@
      You can define multiline string literals using the '\n' character followed by line terminator('\').
 
      ```javascript
-     var str =
-       "This is a \n\ very lengthy \n\ sentence!";
+     var str = "This is a \n very lengthy \n sentence!";
      console.log(str);
      ```
 
@@ -3676,8 +3660,8 @@
 
 194. ### What is a proxy object
 
-     The Proxy object is used to define custom behavior for fundamental operations such as property lookup, assignment, enumeration, function invocation, etc. 
-     
+     The Proxy object is used to define custom behavior for fundamental operations such as property lookup, assignment, enumeration, function invocation, etc.
+
      A proxy is created with two parameters: a target object which you want to proxy and a handler object which contains methods to intercept fundamental operations. The syntax would be as follows,
 
      ```javascript
@@ -3687,38 +3671,38 @@
      Let's take a look at below examples of proxy object and how the get method which customize the lookup behavior,
 
      ```javascript
-      //Example1:
+     //Example1:
 
-        const person = {
-          name: 'Sudheer Jonna',
-          age: 35
-        };
+     const person = {
+       name: "Sudheer Jonna",
+       age: 35,
+     };
 
-      const handler = {
-        get(target, prop) {
-          if (prop === 'name') {
-            return 'Mr. ' + target[prop];
-          }
-          return target[prop];
-        }
-      };
+     const handler = {
+       get(target, prop) {
+         if (prop === "name") {
+           return "Mr. " + target[prop];
+         }
+         return target[prop];
+       },
+     };
 
-      const proxy = new Proxy(person, handler);
+     const proxy = new Proxy(person, handler);
 
-      //Example2: 
+     //Example2:
 
-      var handler1 = {
-        get: function (obj, prop) {
-          return prop in obj ? obj[prop] : 100;
-        },
-      };
+     var handler1 = {
+       get: function (obj, prop) {
+         return prop in obj ? obj[prop] : 100;
+       },
+     };
 
-      var p = new Proxy({}, handler1);
-      p.a = 10;
-      p.b = null;
+     var p = new Proxy({}, handler1);
+     p.a = 10;
+     p.b = null;
 
-      console.log(p.a, p.b); // 10, null
-      console.log("c" in p, p.c); // false, 100
+     console.log(p.a, p.b); // 10, null
+     console.log("c" in p, p.c); // false, 100
      ```
 
      In the above code, it uses `get` handler which define the behavior of the proxy when an operation is performed on it. These proxies are mainly used for some of the below cross-cutting concerns.
@@ -3988,7 +3972,7 @@
      ```javascript
      function user() {}
      console.log(user.toString()); // returns "(function user(){})"
-     ```  
+     ```
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -6824,27 +6808,28 @@
      The `beforeunload` event is triggered when the window, the document and its resources are about to be unloaded. This event is helpful to warn users about losing the current data and detect back button event.
 
      ```javascript
-      window.addEventListener('beforeunload', () => {
-        console.log('Clicked browser back button');
-      });
+     window.addEventListener("beforeunload", () => {
+       console.log("Clicked browser back button");
+     });
      ```
 
-     You can also use `popstate` event to detect the browser back button. 
+     You can also use `popstate` event to detect the browser back button.
      **Note:** The history entry has been activated using `history.pushState` method.
 
      ```javascript
-     window.addEventListener('popstate', () => {
-        console.log('Clicked browser back button');
-        box.style.backgroundColor = 'white';
-      });
+     window.addEventListener("popstate", () => {
+       console.log("Clicked browser back button");
+       box.style.backgroundColor = "white";
+     });
 
-     const box = document.getElementById('div');
+     const box = document.getElementById("div");
 
-     box.addEventListener('click', () => {
-      box.style.backgroundColor = 'blue';
-      window.history.pushState({}, null, null);
+     box.addEventListener("click", () => {
+       box.style.backgroundColor = "blue";
+       window.history.pushState({}, null, null);
      });
      ```
+
 
     In the preceeding code, When the box element clicked, its background color appears in blue color and changed to while color upon clicking the browser back button using `popstate` event handler. The `state` property of `popstate` contains the copy of history entry's state object.
 
@@ -8365,15 +8350,19 @@ multiplyBy2(add(2, 3));
 **[⬆ Back to Top](#table-of-contents)**
 
 451. ### What is the purpose of the this keyword in JavaScript?
-* The `this` keyword in JavaScript is a special variable that is used within a function to refer to the object on which the function is invoked. The value of this depends on how the function is called. It allows functions to access and interact with the object they are bound to.
-* The this keyword in JavaScript is a reference to the object that owns or invokes the current function. Its value is determined by the calling context.
-**Example 1: this in a Global Context**
+
+- The `this` keyword in JavaScript is a special variable that is used within a function to refer to the object on which the function is invoked. The value of this depends on how the function is called. It allows functions to access and interact with the object they are bound to.
+- The this keyword in JavaScript is a reference to the object that owns or invokes the current function. Its value is determined by the calling context.
+  **Example 1: this in a Global Context**
+
 ```javascript
 console.log(this);
 ```
-* In a global context, this refers to the global object (e.g., window in a browser).
+
+- In a global context, this refers to the global object (e.g., window in a browser).
 
 **Example 2: this in a Function**
+
 ```javascript
 function displayThis() {
   console.log(this);
@@ -8381,51 +8370,57 @@ function displayThis() {
 
 displayThis();
 ```
-*  In a regular function, this refers to the global object.
+
+- In a regular function, this refers to the global object.
 
 **Example 3: this in a Method**
+
 ```javascript
 const person = {
-  name: 'John',
-  greet: function() {
-    console.log('Hello, ' + this.name);
-  }
+  name: "John",
+  greet: function () {
+    console.log("Hello, " + this.name);
+  },
 };
 
 person.greet();
 ```
-* In a method, this refers to the object that owns the method (person in the case).
+
+- In a method, this refers to the object that owns the method (person in the case).
 
 **Example 4: this in an Event Handler**
+
 ```javascript
-document.getElementById('myButton').addEventListener('click', function() {
+document.getElementById("myButton").addEventListener("click", function () {
   console.log(this);
 });
 ```
-*  In an event handler, this refers to the element that triggered the event (the button in this case).
+
+- In an event handler, this refers to the element that triggered the event (the button in this case).
 
 **[⬆ Back to Top](#table-of-contents)**
 
 452. ### What are the uses of closures?
-Closures are a powerful feature in programming languages like JavaScript. They allow functions to retain access to variables from their containing (enclosing) scope even after the outer function has finished executing. This means that a function defined within another function can access variables from the outer function, even if the outer function has already returned.
-Here are some common use cases of closures:
+     Closures are a powerful feature in programming languages like JavaScript. They allow functions to retain access to variables from their containing (enclosing) scope even after the outer function has finished executing. This means that a function defined within another function can access variables from the outer function, even if the outer function has already returned.
+     Here are some common use cases of closures:
 
-*  Data Privacy: Closures can be used to create private variables and methods. By defining variables within a function's scope and returning inner functions that have access to those variables, you can create     a form of encapsulation, limiting access to certain data or functionality.
+- Data Privacy: Closures can be used to create private variables and methods. By defining variables within a function's scope and returning inner functions that have access to those variables, you can create a form of encapsulation, limiting access to certain data or functionality.
 
-*  Function Factories: Closures are often used to create functions with pre-set parameters. This is useful when you need to create multiple functions with similar behavior but different configurations.
+- Function Factories: Closures are often used to create functions with pre-set parameters. This is useful when you need to create multiple functions with similar behavior but different configurations.
 
-*  Callback Functions: Closures are frequently used in asynchronous programming, such as handling event listeners or AJAX requests. The inner function captures variables from the outer scope and can access        them when the callback is invoked.
+- Callback Functions: Closures are frequently used in asynchronous programming, such as handling event listeners or AJAX requests. The inner function captures variables from the outer scope and can access them when the callback is invoked.
 
-*  Memoization: Closures can be used for memoization, a technique to optimize performance by caching the results of expensive function calls. The inner function can remember the results of previous calls and      return the cached result if the same input is provided again.
+- Memoization: Closures can be used for memoization, a technique to optimize performance by caching the results of expensive function calls. The inner function can remember the results of previous calls and return the cached result if the same input is provided again.
 
-*  iterators and Generators: Closures can be used to create iterators and generators, which are essential for working with collections of data in modern JavaScript.
-**[⬆ Back to Top](#table-of-contents)**
+- iterators and Generators: Closures can be used to create iterators and generators, which are essential for working with collections of data in modern JavaScript.
+  **[⬆ Back to Top](#table-of-contents)**
 
 453. ### What are the phases of execution context?
 
 **[⬆ Back to Top](#table-of-contents)**
 
 454. ### What are the possible reasons for memory leaks?
+
      Memory leaks can lead to poor performance, slow loading times and even crashes in web applications. Some of the common causes of memory leaks are listed below,
 
      1. The execessive usage of global variables or omitting the `var` keyword in local scope.
@@ -8433,20 +8428,22 @@ Here are some common use cases of closures:
      3. Closures retain references to variables from their parent scope, which leads to variables might not garbage collected even they are no longer used.
 
 455. ### What are the optimization techniques of V8 engine?
+
      V8 engine uses the below optimization techniques.
 
      1. **Inline expansion:** It is a compiler optimization by replacing the function calls with the corresponding function blocks.
      2. **Copy elision:** This is a compiler optimization method to prevent expensive extra objects from being duplicated or copied.
-     3. **Inline caching:** It is a runtime optimization technique where it caches the execution of older tasks those can be lookup while executing the same task in the future. 
+     3. **Inline caching:** It is a runtime optimization technique where it caches the execution of older tasks those can be lookup while executing the same task in the future.
 
      **[⬆ Back to Top](#table-of-contents)**
 
 456. ### What are the examples of built-in higher order functions?
+
      There are several built-in higher order functions exists on arrays, strings, DOM and promise methods in javascript. These higher order functions provides significant level of abstraction. The list of functions on these categories are listed below,
+
      1. **arrays:** map, filter, reduce, sort, forEach, some etc.
      2. **DOM**: The DOM method `element.addEventListener(type, handler)` also accepts the function handler as a second argument.
      3. **Strings:** .some() method
-
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -8460,26 +8457,29 @@ Here are some common use cases of closures:
 **[⬆ Back to Top](#table-of-contents)**
 
 458. ### How do you create polyfills for map, filter and reduce functions?
-**[⬆ Back to Top](#table-of-contents)**
+
+     **[⬆ Back to Top](#table-of-contents)**
 
 459. ### What is the difference between map and forEach functions?
+
      Both map and forEach functions are used to iterate over an arrays but there are some differences in their functionality.
 
      1. **Returning values:** The `map` method returns a new array with transformed elements whereas `forEach` method returns `undefined` eventhough both of them are doing the same job.
 
-      ```javascript
-        const arr = [1, 2, 3, 4, 5];
-        arr.map(x => x * x); // [1, 4, 9, 16, 25]
-        arr.forEach(x => x * x); // undefined
-      ```
+     ```javascript
+     const arr = [1, 2, 3, 4, 5];
+     arr.map((x) => x * x); // [1, 4, 9, 16, 25]
+     arr.forEach((x) => x * x); // undefined
+     ```
 
      2. **Chaining methods:** The `map` method is chainable. i.e, It can be attached with `reduce`, `filter`, `sort` and other methods as well. Whereas `forEach` cannot be attached with any other methods because it returns `undefined` value.
 
-      ```javascript
-        const arr = [1, 2, 3, 4, 5];
-        arr.map(x => x * x).reduce((total, cur) => total + cur); // 55
-        arr.forEach(x => x * x).reduce((total, cur) => total + cur);; //Uncaught TypeError: Cannot read properties of undefine(reading 'reduce')
-      ```
+     ```javascript
+     const arr = [1, 2, 3, 4, 5];
+     arr.map((x) => x * x).reduce((total, cur) => total + cur); // 55
+     arr.forEach((x) => x * x).reduce((total, cur) => total + cur); //Uncaught TypeError: Cannot read properties of undefine(reading 'reduce')
+     ```
+
      3. **Mutation:** The `map` method doesn't mutate the original array by returning new array. Whereas `forEach` method also doesn't mutate the original array but it's callback is allowed to mutate the original array.
 
      **Note:** Both these methods existed since ES5 onwards.
@@ -8487,20 +8487,22 @@ Here are some common use cases of closures:
 **[⬆ Back to Top](#table-of-contents)**
 
 460. ### Give an example of statements affected by automatic semicolon insertion?
+
      The javascript parser will automatically add a semicolon while parsing the source code. For example, the below common statements affected by Automatic Semicolon Insertion(ASI).
 
-      1. An empty statement
-      2. var statement
-      3. An expression statement
-      4. do-while statement
-      5. continue statement
-      6. break statement
-      7. return statement
-      8. throw statement
+     1. An empty statement
+     2. var statement
+     3. An expression statement
+     4. do-while statement
+     5. continue statement
+     6. break statement
+     7. return statement
+     8. throw statement
 
 **[⬆ Back to Top](#table-of-contents)**
 
 461. ### What are the event phases on browser?
+
      There are 3 phases in the lifecycle of an event propagation in JavaScript,
 
      1. **Capturing phase:** This phase goes down gradually from the top of the DOM tree to the target element when a nested element clicked. Before the click event reaching the final destination element, the click event of each parent's element must be triggered.
@@ -8508,22 +8510,23 @@ Here are some common use cases of closures:
      2. **Target phase:** This is the phase where the event originally occurred reached the target element .
 
      3. **Bubbling phase:** This is reverse of the capturing phase. In this pase, the event bubbles up from the target element through it's parent element, an ancestor and goes all the way to the global window object.
-     
+
      The pictorial representation of these 3 event phases in DOM looks like below,
-     
+
      ![Screenshot](images/event-flow.png)
 
-  **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 462. ### What are the real world usecases of proxy?
+
      Proxies are not used in regular day to day JavaScript work but they enabled many exciting programming patterns. Some of the real world usecases are listed below,
 
-     1. Vue3 used proxy concept to implement reactive state 
-     2. SolidJS implemented reactive stores 
+     1. Vue3 used proxy concept to implement reactive state
+     2. SolidJS implemented reactive stores
      3. Immerjs built upon proxy to track updates to immutable updates
      4. ZenStack improved Prisma ORM for access control layer
 
-  **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Coding Exercise
 
@@ -9242,7 +9245,7 @@ console.log(numbers.includes(NaN)); // true
 #### 23. What is the output of below code
 
 ```javascript
-let [a, ...b,] = [1, 2, 3, 4, 5];
+let [a, ...b] = [1, 2, 3, 4, 5];
 console.log(a, b);
 ```
 
@@ -11279,13 +11282,14 @@ The length of the array 'arr' has been set to 0, so the array becomes empty.
 **[⬆ Back to Top](#table-of-contents)**
 
 #### 81. How do you verify two strings are anagrams or not?
+
 An anagram is a word or phrase formed by rearranging all the letters of a different word or phrase exactly once. For example, the anagrams of "eat" word are "tea" and "ate".
 
 You can split each word into characters, followed by sort action and later join them back. After that you can compare those two words to verify whether those two words are anagrams or not.
 
 ```javascript
 function verifyAnagrams(word1, word2) {
-  return word1.split("").sort().join("") === word2.split("").sort().join("")
+  return word1.split("").sort().join("") === word2.split("").sort().join("");
 }
 console.log(verifyAnagrams("eat", "ate"));
 ```
@@ -11300,10 +11304,10 @@ printHello();
 printMessage();
 
 function printHello() {
-  console.log('Hello')
+  console.log("Hello");
 
   function printMessage() {
-    console.log("Good day")
+    console.log("Good day");
   }
 }
 ```
@@ -11327,10 +11331,10 @@ printHello();
 
 function printHello() {
   printMessage();
-  console.log('Hello')
+  console.log("Hello");
 
   function printMessage() {
-    console.log("Good day")
+    console.log("Good day");
   }
 }
 ```
@@ -11344,23 +11348,22 @@ function printHello() {
 #### 83. What is the time taken to execute below timeout callback?
 
 ```javascript
-  console.log("Start code");
+console.log("Start code");
 
-  setTimeout(function() {
-      console.log("Callback code");
-  }, 5000);
+setTimeout(function () {
+  console.log("Callback code");
+}, 5000);
 
-  console.log("After callback");
+console.log("After callback");
 
+let startTime = new Date().getTime();
+let endTime = startTime;
 
-  let startTime = new Date().getTime();
-  let endTime = startTime;
+while (endTime <= startTime + 10000) {
+  endTime = new Date().getTime();
+}
 
-  while(endTime <= startTime + 10000) {
-      endTime = new Date().getTime();
-  }
-
-  console.log("End code");
+console.log("End code");
 ```
 
 - 1: > 10 sec
@@ -11373,7 +11376,7 @@ function printHello() {
 
 ##### Answer: 1
 
-Even though there is a timer of 5 seconds supplied to `setTimeout` callback, it won't get executed until the main thread is free and finished executing the remaining part of the code. In this example, the remaining code(while loop) takes 10seconds to finish it's execution. In the mean time, the callback will be stored in callback queue upon completion of its 5 seconds timer. After 10 seconds, the callback will be moved to callstack because the callstack is empty by poping out global execution context. 
+Even though there is a timer of 5 seconds supplied to `setTimeout` callback, it won't get executed until the main thread is free and finished executing the remaining part of the code. In this example, the remaining code(while loop) takes 10seconds to finish it's execution. In the mean time, the callback will be stored in callback queue upon completion of its 5 seconds timer. After 10 seconds, the callback will be moved to callstack because the callstack is empty by poping out global execution context.
 
 </p>
 </details>
