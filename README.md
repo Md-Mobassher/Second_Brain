@@ -12,6 +12,8 @@ The primary purpose of this repository is to:
 
 Feel free to explore the different branches to find information on specific topics.
 
+---
+
 ## Topics Covered
 
 ### Git and GitHub
@@ -43,12 +45,23 @@ Feel free to explore the different branches to find information on specific topi
 - Working with Mongoose for MongoDB integration.
 - CRUD operations with MongoDB.
 
-### Database Handnote: PostgreSQL
+### Database: PostgreSQL
 
 - Introduction to PostgreSQL and its core features.
 - Setting up PostgreSQL databases.
 - Basic and advanced SQL queries for data manipulation and retrieval.
 - Integrating PostgreSQL with web applications.
+
+### Prisma
+
+- Hand note covering Prisma, a modern database toolkit.
+- CRUD operations and schema definition with Prisma.
+
+### Interview Questions
+
+- Collection of interview questions and answers related to JavaScript, Node.js, React, TypeScript, and more.
+
+---
 
 ## How to Navigate
 
@@ -66,4 +79,4 @@ In addition to the content in this repository, I've included a list of external 
 
 Happy exploring and learning!
 
-**[Md Mobassher Hossain]**
+👉 See My Portfolio Here - **[Md Mobassher Hossain](https://dev-mobassher.web.app)**
