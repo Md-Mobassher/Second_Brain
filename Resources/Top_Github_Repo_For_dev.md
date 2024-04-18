@@ -1,4 +1,4 @@
-# Top 10 Github Repositories For Web Developers
+# Important Github Repositories For Web Developers
 
 1. Web Developer-Roadmap :  [https://github.com/kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 2. 30-Seconds-Of-Code :  [https://github.com/30-seconds/30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code)
