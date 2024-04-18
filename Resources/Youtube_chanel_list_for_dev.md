@@ -1,0 +1,22 @@
+# Youtube chanel List for learn code
+
+1. Learn with Sumit Bangladesh
+2. Stack Learner (Bangla)
+3. Anisul Islam (Bangla)
+4. Rabbil Hasan (Bangla)
+5. Traversy Media (English)
+6. The Net Ninja ( English) ( I think he uploads his premium course videos on his channel)
+7. CodeWithHarry (Hindi)
+8. FreeCodeCamp.org (English) (Youtube & website both)
+9. Hitesh Choudhury (Hindi)
+10. 10.DevTips (English)
+11. Kevin Powell (English)
+12. Dev Ed (English)
+13. Clever Programmer (English)
+14. Fireship (English)
+15. Web Dev Simplified (English)
+16. DesignCourse (English) (For UI/Ux)
+17. Programming with Mosh (English)
+18. codeSTACKr (English)
+19. Tech with Tim (English) (For Python)
+20. Academind (English)
