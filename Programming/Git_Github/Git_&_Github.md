@@ -1,10 +1,8 @@
-# Project Name
+# Git and GitHub HandNote
 
-## Git and GitHub Handnote
+Welcome to the Git and GitHub HandNote! This handnote provides a brief overview of using Git and GitHub for version control and collaboration.
 
-Welcome to the Git and GitHub Handnote! This handnote provides a brief overview of using Git and GitHub for version control and collaboration.
-
-### Command Line Usage
+## Command Line Usage
 
 #### Navigating through directories:
 
@@ -20,13 +18,15 @@ cd..
 cd [directory_name]
 ```
 
-#### Visual Studio Code Commands:
+### Visual Studio Code Commands:
 
 - **Open Folder:** Open the terminal in VS Code and navigate to the project folder:
 
 ```
 code .
 ```
+
+---
 
 ## Git Commands:
 
@@ -88,7 +88,9 @@ git commit -m "commit message"
 git push
 ```
 
-### Working with Branches:
+---
+
+## Working with Branches:
 
 - Create a new branch
 
@@ -126,7 +128,9 @@ git push origin --delete [branch_name]
 git push -u origin [branch name]
 ```
 
-### Additional Git Commands:
+---
+
+## Additional Git Commands:
 
 - Check Git status
 
@@ -158,12 +162,16 @@ git stash
 git stash clear
 ```
 
-### GitHub Workflow:
+---
+
+## GitHub Workflow:
 
 - **Fork the Repository:** Click the "Fork" button on the top right of the repository page to create your copy.
 - **Create Pull Requests (PR):** After making changes in your forked repository, create a PR to propose changes to the original repository.
 - **Code Reviews:** Collaborators can review and comment on your code changes before merging.
 - **Merge Pull Requests:** Once the changes are approved, they can be merged into the main branch.
+
+---
 
 ## Details :
 
@@ -212,6 +220,8 @@ git rm -r [file-name.txt]
 ```
 rm -rf .git
 ```
+
+---
 
 ## Branching & Merging
 
@@ -305,6 +315,8 @@ git stash
 git stash clear
 ```
 
+---
+
 ## Sharing & Updating Projects
 
 - **Push a branch to your remote repository:**
@@ -354,6 +366,27 @@ git remote add origin ssh://git@github.com/[username]/[repository-name].git
 ```
 git remote set-url origin ssh://git@github.com/[username]/[repository-name].git
 ```
+
+---
+
+## Create new repo and push previous repo's commit & tags
+
+If you have an existing repository with some code and you want to create a new repository with the same code, including the commit history, you can follow these steps:
+
+- **Set a repository's origin branch to SSH:**
+
+```
+git remote set-url origin <new_repository_url>
+```
+
+- **push all previous commit and tags**
+
+```
+git push -u origin --all
+git push -u origin --tags
+```
+
+---
 
 ## Inspection & Comparison
 
