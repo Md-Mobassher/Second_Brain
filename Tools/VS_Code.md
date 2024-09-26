@@ -53,3 +53,11 @@
     }
 }
 ```
+
+## VS Code Extention
+
+1. Live Server
+2. Prettier Code Formatter
+3. Auto Rename Tag
+4. Tabnine Ai Autocomplete
+5. GitLens

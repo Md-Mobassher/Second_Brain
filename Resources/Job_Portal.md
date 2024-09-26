@@ -1,4 +1,4 @@
-# Search Dev JOB international Websites List
+# JOB Portal (international)
 
 1. Indeed: [Indeed](https://indeed.com)
 2. Flex Job: [flexjobs.com](http://flexjobs.com/)
@@ -53,6 +53,15 @@
 3. [CSE/EEE/IT Jobs in Bangladesh](https://www.facebook.com/groups/161616437580654/?ref=share)
 4. [CSE/IT/EEE/GOVT-JOB/ Internship/ in Bangladesh | Facebook](https://www.facebook.com/groups/270647179796761/?ref=share)
 5. [https://www.facebook.com/groups/devforhire/?ref=share](https://www.facebook.com/groups/devforhire/?ref=share)
+
+# Bangladeshi Job Portal
+
+1. https://www.bdjobs.com/
+2. https://www.careerjet.com.bd/
+3. https://skill.jobs/
+4. https://bd.linkedin.com/
+5. https://techntalents.com/
+6. https://www.atb-jobs.com/
 
 ---
 
