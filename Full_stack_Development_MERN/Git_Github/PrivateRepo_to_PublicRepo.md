@@ -23,6 +23,8 @@ git remote add public <public_repo_url>
 git push --mirror public
 ```
 
+---
+
 # Private repo add to Public repo with previous public repo commit
 
 To achieve this, you'll need to follow a slightly different approach. Instead of using the `--mirror` option, you'll need to perform a few additional steps to ensure that you retain the commit history from both repositories and merge them properly. Here's how you can do it:
