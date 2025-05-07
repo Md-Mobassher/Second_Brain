@@ -11,24 +11,25 @@
 
 ```
 {
-    "React Functional Component": {
-        "prefix": "cc",
-        "body": [
-        // "import React from 'react'",
-            "",
-            "const $TM_FILENAME_BASE = () => {",
-            "  return (",
-            "     <div>",
-            "             <h1>This is $TM_FILENAME_BASE component</h1>",
-            "     </div>",
-            "  )",
-            "};",
-            "",
-            "export default $TM_FILENAME_BASE;"
-        ],
-        "description": "React Functional Component"
-    }
+  "React Functional Component": {
+    "prefix": "cc",
+    "body": [
+      "",
+      "const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = () => {",
+      "  return (",
+      "    <div>",
+      "      <h1>This is ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} component</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}};$0"
+    ],
+    "description": "React Functional Component (auto PascalCase filename with editable name)"
+  }
 }
+
+
 ```
 
 ### Multicursor
