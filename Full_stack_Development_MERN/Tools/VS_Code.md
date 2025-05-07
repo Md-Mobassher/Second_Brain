@@ -29,31 +29,6 @@
   }
 }
 
-
-```
-
-### Multicursor
-
-```
-{
-    "React Functional Component": {
-        "prefix": "cc",
-        "body": [
-            // "import React from 'react'",
-            "",
-            "const ${1:ComponentName} = () => {",
-            "  return (",
-            "     <div>",
-            "             <h1>This is ${1:ComponentName} component</h1>",
-            "     </div>",
-            "  )",
-            "};",
-            "",
-            "export default ${1:ComponentName};$0"
-        ],
-        "description": "React Functional Component"
-    }
-}
 ```
 
 ---
